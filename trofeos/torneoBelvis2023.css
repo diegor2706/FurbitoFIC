@@ -1,0 +1,363 @@
+/* ========== NAVBAR ========== */
+.navbar {
+  width: 100vw;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0 5%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  background: linear-gradient(90deg, #111319 0%, #1a2238 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar-logo a { display: inline-block; }
+.logo-text {
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.navbar-menu li a {
+  font-weight: 700;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.15rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.2s, border-bottom 0.2s;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+.navbar-menu li.active a,
+.navbar-menu li a:hover {
+  color: #3a8bfd;
+  border-bottom: 2px solid #3a8bfd;
+}
+
+/* FLECHA DE RETROCESO */
+.boton-flecha {
+  position: absolute;
+  top: 120px;      /* Justo debajo de la navbar, ajusta si es necesario */
+  left: 32px;      /* Separación del borde izquierdo */
+  z-index: 100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s;
+  display: flex;
+  align-items: center;
+  opacity: 0.90;
+}
+
+.boton-flecha:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.boton-flecha svg {
+  display: block;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Siempre Montserrat para todo */
+body, .wiki-style, .wiki-toc, .wiki-infobox, .wiki-table, .modal-caption, .gallery, .caption {
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  font-weight: 400 !important;
+}
+
+/* Títulos en negrita */
+h1, .wiki-style h1,
+h2, .wiki-style h2,
+h3, .wiki-style h3 {
+  font-weight: 700 !important;
+  letter-spacing: .02em;
+}
+
+/* Compensar el scroll con NAV fija */
+html {
+  scroll-behavior: smooth;
+}
+:target::before {
+  content: "";
+  display: block;
+  height: 120px; /* AJUSTA aquí el alto según tu navbar */
+  margin-top: -120px;
+}
+
+/* ========== GRID PRINCIPAL AJUSTADO ========== */
+.main-container {
+  display: grid;
+  grid-template-columns: 260px 1fr 400px;
+  max-width: 1620px;
+  margin: 0 auto;
+  align-items: start;
+  gap: 48px;
+  padding-top: 130px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* ========== ÍNDICE WIKI (izquierda) ========== */
+.wiki-toc {
+  grid-column: 1;
+  margin-left: 0;
+  width: 235px;
+  min-width: 140px;
+  max-width: 250px;
+  padding: 26px 18px 20px 18px;
+  background: #f8f9fa;
+  border: 1.5px solid #e3e5e8;
+  border-radius: 9px;
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+  margin-top: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+.wiki-toc .toc-title {
+  font-weight: bold; color: #333; font-size: 1.13em; margin-bottom: 7px;
+  display: inline-block; border-bottom: 2px solid #3a8bfd; padding-bottom: 3px;
+}
+.wiki-toc ul { list-style: none; padding: 0; margin: 0; }
+.wiki-toc ul li { margin-bottom: 8px; }
+.wiki-toc ul li a {
+  color: #1a2238; text-decoration: none; font-size: 1em; transition: color 0.2s; padding-left: 4px;
+}
+.wiki-toc ul li a:hover { color: #3a8bfd; text-decoration: underline; }
+
+/* ========== CONTENIDO CENTRAL ========== */
+.wiki-style {
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  border-radius: 15px;
+  padding: 54px 56px 48px 56px;
+  font-family: 'Linux Libertine', Georgia, 'Times New Roman', serif;
+  color: #212121;
+  min-width: 0;
+  max-width: 1050px;
+  margin: 0;
+  margin-bottom: 32px;
+}
+.wiki-style h1 {
+  font-size: 2.17em;
+  border-bottom: 2px solid #bbb;
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 34px;
+  letter-spacing: .5px;
+}
+.wiki-style h2 {
+  color: #3366cc;
+  font-size: 1.38em;
+  margin-top: 42px;
+  margin-bottom: 17px;
+  border-bottom: 1.4px solid #dedede;
+  padding-bottom: 4px;
+  letter-spacing: 0.2px;
+}
+.wiki-style h3 {
+  font-size: 1.13em;
+  color: #1a2238;
+  margin-top: 22px;
+  border-bottom: 1px solid #abc3f6;
+  padding-bottom: 3px;
+}
+.wiki-style hr {
+  border: none;
+  height: 1px;
+  background: #ddd;
+  margin: 28px 0;
+}
+.wiki-style .justify { text-align: justify; text-justify: inter-word; }
+
+/* ========== TABLAS ESTILO WIKIPEDIA ========== */
+.wiki-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0 40px 0;
+  background: #f8faff;
+  border: 1.5px solid #abd2ff;
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+.wiki-table th, .wiki-table td {
+  border: 1px solid #c1d8fb;
+  padding: 10px 14px;
+  text-align: center;
+}
+.wiki-table th { background: #eaf3ff; color: #1a2238; font-weight: bold; }
+.wiki-table tbody tr:hover { background: #f3f8fe; }
+
+/* ========== INFOBOX AMPLIA Y ESCUDO FIJO ========== */
+.wiki-infobox {
+  grid-column: 3;
+  width: 100%;
+  max-width: 358px;
+  min-width: 215px;
+  background: #f5faff;
+  border: 2px solid #abc9f8;
+  border-radius: 16px;
+  padding: 22px 26px 16px 26px;
+  font-size: 1.09em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin-top: 0;
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+  box-shadow: 0 0 18px rgba(130,170,242,0.08);
+  text-align: center;
+  box-sizing: border-box;
+}
+.infobox-img-escudo {
+  width: 108px;
+  height: 108px;
+  object-fit: contain;
+  margin: 0 auto 19px auto;
+  display: block;
+  background: #fff;
+  border-radius: 60px;
+  box-shadow: 0 2px 10px rgba(110,130,180,0.08);
+}
+.infobox-img-medalla {
+  width: 74%;
+  max-width: 1000px;
+  margin: 14px auto 14px auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 2px 13px rgba(70,110,190,0.08);
+}
+.wiki-infobox th, .wiki-infobox td {
+  padding: 10px 12px;
+  font-size: 1.06em;
+}
+.wiki-infobox th {
+  text-align: center;
+  background: #ddeafe;
+  color: #0e2050;
+  font-weight: bold;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.wiki-infobox tr:not(:first-child) td { border-top: 1px solid #bdd8fc; }
+
+/* ========== GALERÍA ========== */
+.gallery { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 16px; }
+.gallery-item {
+  position: relative;
+  flex: 1 1 180px;
+  max-width: 220px;
+  min-width: 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%; height: 134px; object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.18s;
+  box-shadow: 0 2px 7px rgba(30,70,140,0.08);
+  background: #e9e9e9;
+}
+.gallery-item img:hover { transform: scale(1.04); box-shadow: 0 4px 22px rgba(60,120,255,0.13); }
+.caption {
+  font-size: 1em;
+  color: #223566;
+  margin-top: 9px;
+  text-align: center;
+  background: #eff4fd;
+  border-radius: 7px;
+  padding: 4px 7px;
+  width: 100%;
+}
+
+/* ========== MODAL GALERÍA ========== */
+.modal-galeria {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(30,40,70,0.80);
+  align-items: center; justify-content: center;
+  overflow: auto;
+  animation: modalFadeIn 0.18s;
+}
+@keyframes modalFadeIn { from { opacity:0; } to { opacity:1; } }
+.modal-contenido {
+  margin: auto; display: block; max-width: 86vw; max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 36px rgba(50,0,140,0.15);
+  border: 4px solid #e5ecfb;
+  background: #fff;
+}
+#modal-caption {
+  margin: 13px auto 0 auto;
+  text-align: center;
+  color: #fafbfc;
+  font-size: 1.11em;
+  padding: 9px 18px;
+  background: rgba(50,145,230,0.19);
+  border-radius: 7px;
+  max-width: 600px;
+}
+.modal-cerrar {
+  position: absolute;
+  top: 22px; right: 34px;
+  color: #fff;
+  font-size: 2.6em;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  z-index: 3;
+}
+.modal-cerrar:hover { color: #69c4fa; }
+
+/* ========== RESPONSIVE DISPLAY ========== */
+@media (max-width: 1400px) {
+  .main-container { grid-template-columns: 180px 1fr 290px; max-width: 98vw; gap: 20px; }
+  .wiki-infobox { max-width: 280px; padding: 10px 10px; }
+  .wiki-style { padding: 22px 11px 22px 11px; max-width: 97vw; }
+  .wiki-toc { max-width: 180px; }
+}
+@media (max-width: 1000px) {
+  .main-container { display: block; padding-top: 95px; }
+  .wiki-toc, .wiki-infobox {
+    position: static !important;
+    width: 100%; max-width: 700px; min-width: 0;
+    margin: 24px auto 0 auto;
+  }
+  .wiki-style { max-width: 100%; margin: 0 auto; }
+}
+@media (max-width: 700px) {
+  .wiki-infobox, .wiki-toc, .wiki-style { max-width: 100vw; min-width: 0; }
+  .main-container { padding-top: 90px; }
+  .wiki-style { padding: 12px 4px; }
+  .gallery { gap: 7px; }
+  .gallery-item { max-width: 100%; min-width: 110px; }
+}

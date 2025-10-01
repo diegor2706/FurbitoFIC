@@ -1,0 +1,125 @@
+.palmares-main {
+  max-width: 1200px;
+  margin: 10px auto 0 auto;
+  padding: 0;
+}
+
+.palmares-title {
+  text-align: left;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 10;
+  letter-spacing: 1px;
+  color: #000000;
+}
+
+/* Compensar el scroll con NAV fija */
+html {
+  scroll-behavior: smooth;
+}
+:target::before {
+  content: "";
+  display: block;
+  height: 120px; /* AJUSTA aquí el alto según tu navbar */
+  margin-top: -120px;
+}
+
+.palmares-card.canva-style {
+    display: flex;
+    align-items: stretch;
+    background: none;
+    border: none;
+    box-shadow: none;
+    max-width: 1200px;
+    margin: 10px auto 0 auto;
+    padding: 0;
+    min-height: 170px;
+    cursor: pointer;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+  }
+  .palmares-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+  }
+
+  .palmares-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .palmares-card-link:hover .palmares-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .palmares-img-canva {
+    width: 220px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+    display: block;
+    margin: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+  }
+  .palmares-info-canva {
+    background: #fff;
+    border-radius: 0 12px 12px 0;
+    padding: 22px 38px 22px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    flex: 1;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+    text-align: left;
+    gap: 9px;
+  }
+  .palmares-torneo-canva {
+    font-family: 'Anantason SemiExpanded', Bold, sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    font-style: italic;
+    margin: 0 0 4px 0;
+    letter-spacing: 0.5px;
+  }
+  .palmares-lugar-canva {
+    font-family: 'Anantason SemiExpanded', Bold, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 2px;
+  }
+  .palmares-sub-canva {
+    font-family: 'Anantason SemiExpanded', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: italic;
+    color: #222;
+  }
+  /* Responsive */
+  @media (max-width: 900px) {
+    .palmares-card.canva-style {
+      flex-direction: column;
+      align-items: stretch;
+      min-height: 0;
+    }
+    .palmares-img-canva {
+      width: 100%;
+      height: 140px;
+      border-radius: 12px 12px 0 0;
+    }
+    .palmares-info-canva {
+      border-radius: 0 0 12px 12px;
+      padding: 18px 14px;
+    }
+    .palmares-torneo-canva {
+      font-size: 1.3rem;
+    }
+  }
+  

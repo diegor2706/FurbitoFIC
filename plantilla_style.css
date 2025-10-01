@@ -1,0 +1,154 @@
+  /* Compensar el scroll con NAV fija */
+  html {
+    scroll-behavior: smooth;
+  }
+  :target::before {
+    content: "";
+    display: block;
+    height: 120px; /* AJUSTA aquí el alto según tu navbar */
+    margin-top: -120px;
+  }
+
+.plantilla-main {
+    max-width: 1200px;
+    margin: 10px auto 0 auto;
+    padding: 0;
+  }
+
+  .plantilla-title {
+    text-align: left;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    color: #000000;
+  }
+
+  .plantilla-section { 
+    margin-bottom: 30px; 
+  }
+  
+  .plantilla-subtitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+
+  .plantilla-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* máximo de jugadores por fila */
+    gap: 35px;
+    justify-items: center;
+    align-items: start;
+    /* justify-content: center; /* <-- Añade esto */
+  }
+  
+.jugador-card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1.5px solid #e6e6e6;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    min-width: 208px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding: 0;
+    height: 470px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+ 
+.jugador-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+  }
+
+.jugador-num {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    font-family: 'Montserrat', Bold, sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: #000000;
+    z-index: 2;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .jugador-foto {
+    width: 100%;
+    height: calc(470px - 49px);
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .jugador-info {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-height: 0px;
+    height: 60px;
+  }
+  .jugador-nombre, .jugador-apodo {
+    font-family: 'Montserrat', Bold, Helvetica, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 35px;
+    color: #181c23;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .jugador-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .jugador-link:hover {
+    text-decoration: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .plantilla-grid { gap: 18px; }
+    .jugador-card { width: 60vw; min-width: 180px; height: 320px; }
+    .jugador-foto { height: 210px; }
+  }
+  @media (max-width: 600px) {
+    .plantilla-main { padding: 0 4vw 32px 4vw; }
+    .plantilla-grid { flex-direction: column; align-items: center; gap: 12px; }
+    .jugador-card { width: 100%; min-width: 0; height: 260px; }
+    .jugador-foto { height: 140px; }
+  }
+
+  

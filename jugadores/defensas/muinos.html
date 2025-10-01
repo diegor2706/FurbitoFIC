@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Muiños - Furbito FIC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style> /* de damos breve información del estilo para que tarde menos en cargar */
+    body { font-family: 'Montserrat', Arial, sans-serif; margin:0; padding:0; }
+    .navbar { width: 100vw; left: 0; right: 0; margin: 0; padding: 0 5%; box-sizing: border-box; display: flex; align-items: center;
+  justify-content: space-between; height: 100px; background: linear-gradient(90deg, #111319 0%, #1a2238 100%); box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: fixed; top: 0; z-index: 1000; } /* Solo lo esencial para el header y la estructura */
+    </style>    
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="preload" href="../jugador.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="jugador.css"></noscript>
+   <!-- Iconos Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="../../inicio.html" title="Inicio">
+          <img src="../../images/escudos/escudo 23-24.png" alt="Escudo Furbito FIC" class="logo-img">
+        </a>
+        <span class="logo-text">FURBITO FIC</span>
+      </div>
+      <ul class="navbar-menu">
+        <li><a href="../../inicio.html">Inicio</a></li>
+        <li><a href="../../historia.html">Historia</a></li>
+        <li class="active"><a href="../../plantilla.html">Plantilla</a></li>
+        <li><a href="../../palmares.html">Palmarés</a></li>
+        <li><a href="../../noticias.html">Noticias</a></li>
+        <li><a href="../../equipacion.html">Equipación</a></li>
+        <li><a href="../../calendario.html">Calendario</a></li>
+        <li><a href="../../estadio.html">Estadio</a></li>
+        <li><a href="../../patrocinadores.html">Patrocinadores</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <a href="../../plantilla.html#defensas" class="boton-flecha" title="Volver a la plantilla">
+    <svg width="48" height="48" viewBox="0 0 48 48">
+      <polyline points="30,12 18,24 30,36" fill="none" stroke="#193b6a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  
+
+  <div class="jugador-contenedor">
+    <img src="../../images/fondos/fondo_portonovo.png" class="fondo-jugador" alt="Fondo Portonovo">
+    
+    <section class="ficha-jugador">
+      <figure class="jugador-foto">
+        <img src="../../images/ficha_web/info_muiños.png" alt="David Muiños">
+      </figure>
+      
+      <div class="jugador-info-container">
+        <h1 class="jugador-numero-nombre">3. Muiños</h1>
+        <div class="nombre-subrayado"></div>
+        <p class="jugador-descripcion">
+            Si Baki fuese jugador de fútbol sería un poco como Muqui. Suele jugar con pantalón largo porque le da aura.</p>
+        <div class="jugador-contenido">
+          <div class="jugador-datos">
+            <div class="dato-item">
+              <span class="dato-label">Nombre</span>
+              <span class="dato-valor">David Muíños Figueroa</span>
+            </div>
+            <div class="dato-item">
+              <span class="dato-label">Apodo(s)</span>
+              <span class="dato-valor">Golfo</span>
+            </div>
+            <div class="dato-item">
+              <span class="dato-label">Procedencia</span>
+              <span class="dato-valor">Sanxenxo, Galicia</span>
+            </div>
+            <div class="dato-item">
+              <span class="dato-label">Nacimiento</span>
+              <span class="dato-valor">xx/xx/2003</span>
+            </div>
+          </div>
+          <!-- Columna de estadísticas -->
+          <div class="jugador-estadisticas">
+            <div class="dato-label">Estadísticas</div> <!-- Primera fila -->
+              <div class="estadistica">
+                <span class="estadistica-dato-label">Ritmo</span>
+                <div class="estrellas">
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-vacia"></span>
+                  <span class="estrella estrella-vacia"></span>
+                </div>
+              </div>
+              <div class="estadistica">
+                <span class="estadistica-dato-label">Tiro</span>
+                <div class="estrellas">
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-vacia"></span>
+                  <span class="estrella estrella-vacia"></span>
+                  <span class="estrella estrella-vacia"></span>
+                </div>
+              </div>
+              <div class="estadistica">
+                <span class="estadistica-dato-label">Pase</span>
+                <div class="estrellas">
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-vacia"></span>
+                  <span class="estrella estrella-vacia"></span>
+                </div>
+              </div>
+              <div class="estadistica">
+                <span class="estadistica-dato-label">Regate</span>
+                <div class="estrellas">
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-vacia"></span>
+                  <span class="estrella estrella-vacia"></span>
+                  <span class="estrella estrella-vacia"></span>
+                </div>
+              </div>
+              <div class="estadistica">
+                <span class="estadistica-dato-label">Defensa</span>
+                <div class="estrellas">
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-vacia"></span>
+                </div>
+              </div>
+              <div class="estadistica">
+                <span class="estadistica-dato-label">Físico</span>
+                <div class="estrellas">
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                  <span class="estrella estrella-llena"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SECCIÓN DE ESTADÍSTICAS DETALLADAS -->
+<section class="estadisticas-detalladas" id="estadisticas-completas">
+  <div class="contenedor-estadisticas">
+    
+    <!-- TABLA 1: ESTADÍSTICAS DE CARRERA -->
+    <div class="tabla-seccion" data-tabla="carrera">
+      <div class="tabla-header">
+        <h2>ESTADÍSTICAS DE SU CARRERA</h2>
+      </div>
+      <div class="tabla-contenido">
+        <table class="tabla-estadisticas">
+          <thead>
+            <tr>
+              <th>TEMPORADA</th>
+              <th>PARTIDOS JUGADOS</th>
+              <th>GOLES</th>
+              <th>ASISTENCIAS</th>
+            </tr>
+          </thead>
+          <tbody id="datos-carrera">
+            <tr>
+              <td>21/22</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>22/23</td>
+              <td>1</td>  <!-- partidos-->
+              <td>0</td>  <!-- goles -->
+              <td>0</td>  <!-- asistencias -->
+            </tr>
+            <tr>
+              <td>23/24</td>
+              <td>11</td>
+              <td>0</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>24/25</td>
+              <td>6</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TABLA 2: TRAYECTORIA -->
+    <div class="tabla-seccion" data-tabla="trayectoria">
+      <div class="tabla-header">
+        <h2>TRAYECTORIA</h2>
+      </div>
+      <div class="tabla-contenido">
+        <table class="tabla-estadisticas">
+          <thead>
+            <tr>
+              <th>TEMPORADA</th>
+              <th>EQUIPO</th>
+            </tr>
+          </thead>
+          <tbody id="datos-trayectoria">
+            <tr>
+              <td>21/22</td>
+              <td>Furbito FIC</td>
+            </tr>
+            <tr>
+              <td>22/23</td>
+              <td>Furbito FIC</td>
+            </tr>
+            <tr>
+              <td>23/24</td>
+              <td>Furbito FIC</td>
+            </tr>
+            <tr>
+              <td>24/25</td>
+              <td>Furbito FIC</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TABLA 3: PALMARÉS (OPCIONAL) -->
+    <div class="tabla-seccion">
+      <div class="tabla-header">
+        <h2>PALMARÉS Y DISTINCIONES</h2>
+      </div>
+      <div class="tabla-contenido">
+        <table class="tabla-estadisticas palmares-table">
+          <tbody>
+            <tr> <!-- Aqui empieza la fila -->
+              <td class="palmares-img-cell">
+                <div class="palmares-img-wrap">
+                  <img src="../../images/palmares/furbito_og.png" alt="Furbito OG">
+                </div>
+              </td>                                        
+              <td>Miembro fundador de Furbito FIC</td>
+            </tr>
+            <!-- Más filas si lo necesitas -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+        
+  </div>
+</section>
+
+  <!-- Barra social flotante -->
+<div class="social-bar">
+  <a href="https://www.instagram.com/furbitofic" class="social-icon instagram" target="_blank" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.tiktok.com/@furbitofic" class="social-icon tiktok" target="_blank" title="TikTok">
+    <i class="fab fa-tiktok"></i>
+  </a>
+  <a href="https://x.com/FurbitoFIC" class="social-icon x" target="_blank" title="X">
+    <i class="fab fa-x-twitter"></i>
+  </a>
+</div>
+</body>
+</html>

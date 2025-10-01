@@ -1,0 +1,26 @@
+.estadio-main {
+    max-width: 1200px;
+    margin: 10px auto 0 auto;
+    padding: 0;
+  }
+
+.estadio-title {
+    text-align: left;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    color: #000000;
+}
+
+/* Compensar el scroll con NAV fija */
+html {
+  scroll-behavior: smooth;
+}
+:target::before {
+  content: "";
+  display: block;
+  height: 120px; /* AJUSTA aquí el alto según tu navbar */
+  margin-top: -120px;
+}

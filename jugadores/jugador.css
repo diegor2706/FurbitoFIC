@@ -1,0 +1,613 @@
+/* ========== ESTILOS BASE ========== */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: url('../images/fondos/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Montserrat', Bold, sans-serif;
+  background: url('../images/fondos/fondo.jpg') fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  width: 100vw;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0 5%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  background: linear-gradient(90deg, #111319 0%, #1a2238 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar-logo a { display: inline-block; }
+.logo-text {
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.navbar-menu li a {
+  font-weight: 700;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.15rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.2s, border-bottom 0.2s;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+.navbar-menu li.active a,
+.navbar-menu li a:hover {
+  color: #3a8bfd;
+  border-bottom: 2px solid #3a8bfd;
+}
+
+/* FLECHA DE RETROCESO */
+.boton-flecha {
+  position: absolute;
+  top: 120px;      /* Justo debajo de la navbar, ajusta si es necesario */
+  left: 32px;      /* Separación del borde izquierdo */
+  z-index: 100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s;
+  display: flex;
+  align-items: center;
+  opacity: 0.90;
+}
+
+.boton-flecha:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.boton-flecha svg {
+  display: block;
+}
+
+/* ========== TIPOGRAFÍA NOMBRE JUGADOR ========== */
+@font-face {
+  font-family: 'Anantason SemiExpanded';
+  src: url('../fonts/Anantason-SemiExpanded-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* ========== ESTRUCTURA PRINCIPAL ========== */
+.jugador-contenedor {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+  box-sizing: border-box;
+}
+
+/* Fondo específico del jugador */
+.fondo-jugador {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 85vw;
+  max-height: 75vh;
+  z-index: 1;
+  opacity: 0.9;
+  pointer-events: none;
+  margin-top: 30px;
+}
+
+/* Contenedor de la ficha */
+.ficha-jugador {
+  position: relative;
+  z-index: 2;
+  background: none;
+  box-shadow: none;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px; /* Espacio entre foto y datos */
+}
+
+/* ========== SECCIÓN FOTO ========== */
+.jugador-foto {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 3;
+  background: none;
+  box-shadow: none;
+  margin: 0;
+}
+.jugador-foto img {
+  width: 510px;
+  height: 680px;
+  margin-top: -15px;
+  object-fit: cover;
+  /* border-radius: 15px; */
+  background: none;
+  box-shadow: none;
+  display: block;
+}
+
+/* ========== SECCIÓN INFORMACIÓN ========== */
+.jugador-info-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: -60px;
+}
+
+/* Nombre, subrayado y descripción */
+.jugador-numero-nombre {
+  font-family: 'Anantason SemiExpanded', Bold, sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(90deg, #111 0%, #193b6a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: -6px 8px 16px rgba(0,0,0,0.35);
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+  margin-top: 40px; /* distancia entre el nombre y el borde superior del fondo superpuesto */
+  margin-bottom: 20px;
+  letter-spacing: -0.05em;
+  padding-right: 0.15em; /* Soluciona el recorte de la última letra */
+  overflow: visible;
+}
+.nombre-subrayado {
+  width: 100%;
+  max-width: 650px;
+  height: 4px;
+  background: linear-gradient(90deg, #111 0%, #193b6a 100%);
+  border-radius: 3px;
+  margin: 0 0 24px 0;
+  box-shadow: 0 2px 10px rgba(25,59,106,0.18);
+}
+.jugador-descripcion {
+  text-align: justify;
+  text-justify: inter-word;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: #000000;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 0 32px 0; /* Espacio bajo la descripción */
+}
+
+/* ========== DATOS Y ESTADÍSTICAS ========== */
+.jugador-contenido {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  grid-template-columns: 1fr 1.2fr; /* MÁS ESPACIO PARA ESTADÍSTICAS */
+  gap: 60px; /* MENOS GAP */
+  width: 100%;
+  max-width: 650px;
+  margin-top: 0; /* Espacio uniforme arriba */
+  margin-bottom: 40px;
+}
+
+/* Datos biográficos */
+.jugador-datos {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  gap: 20px;
+}
+
+.dato-item {
+  margin-bottom: 0;
+  display: flex;              /* CAMBIO: FLEX EN LUGAR DE COLUMN */
+  flex-direction: column;     /* HORIZONTAL EN LUGAR DE VERTICAL */
+  align-items: baseline;      /* ALINEACIÓN DE BASE */
+  gap: 2px;                   /* ESPACIO ENTRE TÍTULO Y VALOR */
+}
+
+.dato-label {
+  font-weight: 700;
+  color: #2563eb;
+  font-size: 1.5rem;   /* MÁS PEQUEÑO */
+  margin-bottom: 0;    /* SIN MARGEN INFERIOR */
+  margin-right: 0;     /* SIN MARGEN DERECHO */
+  flex-shrink: 0;      /* NO SE ENCOGE */
+  margin-top: 7.7;
+}
+
+
+.dato-valor {
+  font-size: 1.3rem;  /* NOMBRES MÁS GRANDES */
+  font-weight: 600;   /* MÁS PROMINENTES */
+  margin-top: 0;
+  margin-bottom:1;
+  color: #000000;
+  flex-direction: column;
+  white-space: nowrap;  
+  font-style: italic;
+  flex: 1;             /* TOMA EL ESPACIO RESTANTE */
+}
+
+
+/* Estadísticas */
+.jugador-estadisticas {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1110;
+}
+.jugador-estadisticas > .dato-label {
+  margin-bottom: 6px; /* Igual que en datos personales */
+}
+
+.estadisticas-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 1110;
+}
+.estadistica {
+  display: flex;
+  align-items: center;
+  margin-top: -4.5;
+  margin-bottom: 5;
+  padding: 0;
+  width: 100%;
+}
+.estadistica-dato-label {
+  font-size: 1.3rem;  /* NOMBRES MÁS GRANDES */
+  font-weight: 600;   /* MÁS PROMINENTES */
+  margin-top: -10x;
+  margin-bottom: 5;
+  color: #050505;
+  flex-direction: column;
+  white-space: nowrap;  
+  font-style: italic;
+  flex: 1;             /* TOMA EL ESPACIO RESTANTE */      
+}
+
+.estrellas {
+  display: flex;
+  align-items: center; /* ALINEACIÓN VERTICAL PERFECTA */
+  margin-left: 32px;
+  gap: 1.3px;            /* MENOS ESPACIO ENTRE ESTRELLAS */
+  font-size: 1.6rem;   /* MÁS PEQUEÑAS (antes 2.2rem) */
+}
+
+.estrella {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  line-height: 1;      /* ALINEACIÓN VERTICAL PERFECTA */
+  margin-top: -2;
+  margin-left: 10;
+}
+
+.estrella-llena::before,
+.estrella-vacia::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  line-height: 1;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.estrella-llena::before {
+  background: linear-gradient(90deg, #ffb700 0%, #ffe066 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 2px rgba(255,183,0,0.3);
+}
+.estrella-vacia::before {
+  background: linear-gradient(90deg, #333 0%, #888 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* ========== ESPACIADO UNIFORME BAJO LA DESCRIPCIÓN Y ANTES DE LAS ESTADÍSTICAS ========== */
+.jugador-descripcion {
+  margin-bottom: 32px; /* MISMO QUE .jugador-estadisticas > .dato-label */
+}
+.jugador-estadisticas {
+  margin-top: 0; /* Elimina espacio extra arriba */
+}
+
+/* ========== ESTADÍSTICAS DETALLADAS ========== */
+.estadisticas-detalladas {
+  width: 100%;
+  padding: 80px 0;
+  background: none; /* El fondo general ya es fondo.jpg */
+  margin-top: -20px;
+}
+
+.contenedor-estadisticas {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px 40px; /* Espacio entre tablas horizontal y vertical */
+  align-items: stretch;
+}
+
+/* Cada tabla individual */
+.tabla-seccion {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  overflow: hidden;
+  width: 45%; /* Dos tablas por fila, márgenes iguales */
+  min-width: 340px;
+  max-width: 600px;
+  margin: 0;
+  transition: none; /* Sin animación de elevación */
+}
+
+/* Elimina efecto hover de elevación y sombra extra */
+.tabla-seccion:hover {
+  transform: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+
+/* Header de cada tabla */
+.tabla-header {
+  background: linear-gradient(90deg, #111319 0%, #193b6a 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.tabla-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Contenido de la tabla */
+.tabla-contenido {
+  padding: 0;
+}
+
+.tabla-estadisticas {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.tabla-estadisticas thead {
+  background: #f8f9fa;
+}
+
+.tabla-estadisticas th {
+  padding: 15px 12px;
+  text-align: center;
+  font-weight: 700;
+  color: #2563eb;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.tabla-estadisticas td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 1rem;
+  color: #2a2a2a;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+.tabla-estadisticas tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Palmarés grid específico */
+.palmares-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  background: none; /* Elimina fondo gris */
+}
+
+.palmares-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0; /* Sin fondo ni borde lateral */
+  background: none;
+  border-radius: 0;
+  border: none;
+}
+
+.palmares-icono {
+  width: 80px;   /* Antes 48px o 64px. Ajusta a tu gusto */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Palmarés: imagen proporcionada y alineada */
+.palmares-img-cell {
+  width: 96px; /* 4:3 ratio, 96x72px por ejemplo */
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.palmares-img-wrap {
+  width: 96px;
+  height: 72px;            /* 4:3 ratio */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.palmares-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* Muestra la imagen completa, sin recortes */
+  object-position: center center;
+  display: block;
+  background: none;
+  border-radius: 8px;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+.palmares-img-cell img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;      /* Mantiene proporción 3:2 */
+  object-fit: cover;        /* Recorta la imagen si es necesario */
+  border-radius: 8px;
+  margin: 0 auto;
+  max-width: 120px;         /* Limita el tamaño máximo */
+  max-height: 80px;
+  background: #fff;
+}
+
+.palmares-texto {
+  font-weight: 600;
+  color: #495057;
+  font-size: 1.1rem;
+}
+
+.palmares-table {
+  margin: 0;
+  padding: 0;
+}
+
+.palmares-table td {
+  padding: 8px 8px; /* Menos padding para filas más compactas */
+}
+
+
+/* Responsive: tablas apiladas en móvil */
+@media (max-width: 1024px) {
+  .tabla-seccion {
+    width: 100%;
+    min-width: unset;
+    max-width: 100%;
+  }
+  .contenedor-estadisticas {
+    gap: 30px 0;
+  }
+}
+@media (max-width: 768px) {
+  .contenedor-estadisticas {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 10px;
+  }
+  .tabla-header h2 {
+    font-size: 1.2rem;
+  }
+  .tabla-estadisticas th,
+  .tabla-estadisticas td {
+    padding: 8px 4px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ocultar tablas opcionales si no tienen datos */
+.tabla-seccion[data-opcional="true"]:empty {
+  display: none;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1200px) {
+  .ficha-jugador {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .jugador-foto img {
+    width: 300px;
+    height: 400px;
+    margin-top: 0;
+  }
+  .jugador-contenido {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .jugador-numero-nombre {
+    font-size: 3rem;
+  }
+  .jugador-foto img {
+    width: 250px;
+    height: 333px;
+  }
+  .jugador-contenido {
+    gap: 20px;
+  }
+}

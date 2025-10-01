@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Furbito FIC | Página Web Oficial de Furbito FIC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fuente Bebas Neue para el título -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fuente Montserrat para el resto -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="inicio_style.css">
+  <!-- Iconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="inicio.html" title="Inicio">
+          <img src="images/escudos/escudo 23-24.png" alt="Escudo Furbito FIC" class="logo-img">
+        </a>
+        <span class="logo-text">FURBITO FIC</span>
+      </div>
+      <ul class="navbar-menu">
+        <li class="active"><a href="inicio.html">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="plantilla.html">Plantilla</a></li>
+        <li><a href="palmares.html">Palmarés</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="equipacion.html">Equipación</a></li>
+        <li><a href="calendario.html">Calendario</a></li>
+        <li><a href="estadio.html">Estadio</a></li>
+        <li><a href="patrocinadores.html">Patrocinadores</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="hero-carousel">
+    <div class="carousel-container">
+      <!-- Flechas de navegación -->
+      <button class="carousel-btn carousel-btn-prev" id="prevBtn">
+        <span>‹</span>
+      </button>
+      <button class="carousel-btn carousel-btn-next" id="nextBtn">
+        <span>›</span>
+      </button>
+
+      <!-- Slides del carrusel -->
+      <div class="carousel-wrapper">
+        <div class="carousel-slide active" data-section="historia">
+          <img src="images/inicio/inicio_historia.png" alt="Historia">
+          <div class="slide-content">
+            <h2>NUESTRA HISTORIA</h2>
+            <p>Descubre los orígenes del club más grande de la Facultad de Informática de Coruña</p>
+            <a href="historia.html" class="slide-btn">Conocer más</a>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-section="plantilla">
+          <img src="images/inicio/inicio_plantilla.png" alt="Plantilla">
+          <div class="slide-content">
+            <h2>NUESTRA PLANTILLA</h2>
+            <p>Conoce a todos los jugadores y miembros del cuerpo técnico del equipo</p>
+            <a href="plantilla.html" class="slide-btn">Ver plantilla</a>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-section="palmares">
+          <img src="images/inicio/inicio_palmares.png" alt="Palmarés">
+          <div class="slide-content">
+            <h2>NUESTRO PALMARÉS</h2>
+            <p>Todos los títulos y logros conseguidos a lo largo de la historia del club</p>
+            <a href="palmares.html" class="slide-btn">Consultar palmarés</a>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-section="noticias">
+          <img src="images/inicio/inicio_noticias.png" alt="Noticias">
+          <div class="slide-content">
+            <h2>ÚLTIMAS NOTICIAS</h2>
+            <p>Mantente al día con todas las novedades sobre el equipo, la plantilla y la competición</p>
+            <a href="noticias.html" class="slide-btn">Leer más</a>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-section="equipacion">
+          <img src="images/inicio/inicio_equipacion.png" alt="Equipación">
+          <div class="slide-content">
+            <h2>NUESTRA EQUIPACIÓN</h2>
+            <p>Todo lo que debes saber sobre los colores oficiales que luce Furbito FIC en los partidos</p>
+            <a href="equipacion.html" class="slide-btn">Ver equipación</a>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-section="calendario">
+          <img src="images/inicio/inicio_calendario.png" alt="Calendario">
+          <div class="slide-content">
+            <h2>PRÓXIMOS PARTIDOS</h2>
+            <p>Consulta el calendario completo de la temporada para saber cuándo juega tu equipo</p>
+            <a href="calendario.html" class="slide-btn">Ver calendario</a>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-section="estadio">
+          <img src="images/inicio/inicio_estadio.png" alt="Estadio">
+          <div class="slide-content">
+            <h2>NUESTRO ESTADIO</h2>
+            <p>Toda la información sobre dónde juega Furbito los partidos de la liga</p>
+            <a href="estadio.html" class="slide-btn">Conocer estadio</a>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-section="patrocinadores">
+          <img src="images/inicio/inicio_patrocinadores.png" alt="Patrocinadores">
+          <div class="slide-content">
+            <h2>PATROCINADORES</h2>
+            <p>Empresas que apoyan nuestro proyecto y ayudan a que todo esto sea posible</p>
+            <a href="patrocinadores.html" class="slide-btn">Ver patrocinadores</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+        <span class="indicator" data-slide="3"></span>
+        <span class="indicator" data-slide="4"></span>
+        <span class="indicator" data-slide="5"></span>
+        <span class="indicator" data-slide="6"></span>
+        <span class="indicator" data-slide="7"></span>
+      </div>
+    </div>
+  </main>
+  <script src="carousel.js"></script>
+
+    <!-- Barra social flotante -->
+<div class="social-bar">
+  <a href="https://www.instagram.com/furbitofic" class="social-icon instagram" target="_blank" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.tiktok.com/@furbitofic" class="social-icon tiktok" target="_blank" title="TikTok">
+    <i class="fab fa-tiktok"></i>
+  </a>
+  <a href="https://x.com/FurbitoFIC" class="social-icon x" target="_blank" title="X">
+    <i class="fab fa-x-twitter"></i>
+  </a>
+</div>
+</body>
+</html>

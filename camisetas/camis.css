@@ -1,0 +1,263 @@
+.equip-link {
+    display: flex;
+    flex: 1 1 0;
+    width: 50vw;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+  
+.equip-link:active, .equip-link:visited, .equip-link:focus {
+    outline: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* FLECHA DE RETROCESO */
+.boton-flecha {
+  position: absolute;
+  top: 120px;      /* Justo debajo de la navbar, ajusta si es necesario */
+  left: 32px;      /* Separación del borde izquierdo */
+  z-index: 100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s;
+  display: flex;
+  align-items: center;
+  opacity: 0.90;
+}
+
+.boton-flecha:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.boton-flecha svg {
+  display: block;
+}
+
+/* CONTENIDO PRINCIPAL */
+@font-face {
+  font-family: 'Anantason SemiExpanded';
+  src: url('../fonts/Anantason-SemiExpanded-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Anantason SemiExpanded';
+  src: url('../fonts/Anantason-SemiExpanded-Italic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #f7f8fb;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Layout principal --- */
+.main-camiseta {
+  max-width: 1320px;
+  margin: 0 auto;              /* margen 0 arriba */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding-top: 38px;           /* MUY cerca del navbar */
+}
+
+.main-cami-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;                  /* Menos aire */
+  align-items: flex-start;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* Título: grande, sin separación excesiva, dos tipografías */
+.titulo-cami {
+  width: 100%;
+  border-bottom: 3px solid #111;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding-bottom: 7px;
+  gap: 16px;
+  line-height: 1.04;
+  letter-spacing: 0.01em;
+  justify-content: flex-start;
+}
+.titulo-principal {
+  font-family: 'Anantason SemiExpanded', Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #181e3a;
+}
+.titulo-secundario {
+  font-family: 'Anantason SemiExpanded', Arial, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #222;
+  margin-left: 11px;
+  font-size: 0.87em;
+}
+
+/* --- Izquierda: solo camiseta, sin fondo ni borde, bien grande --- */
+/* CAMISETA: muy grande y centrada */
+.main-camiseta-left {
+  flex: 0 0 540px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  margin-left: 0;
+}
+.main-camiseta-left img {
+  width: 470px;
+  max-width: 97vw;
+  height: auto;
+  border-radius: 0;           /* Sin fondo ni borde */
+  background: none;
+  box-shadow: none;
+  display: block;
+}
+
+/* --- Derecha: descripción y galería alineadas --- */
+.main-camiseta-right {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.desc-cami {
+  font-size: 1.23rem;
+  color: #222;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 400;
+  margin-bottom: 19px;
+  text-align: justify;
+  line-height: 1.45;
+  max-width: 100%;
+}
+
+/* --- Galería de fotos con título en Anantason cursiva --- */
+.galeria-seccion-cami {
+  width: 100%;
+  margin-top: 20px;
+}
+.galeria-titulo {
+  font-family: 'Anantason SemiExpanded', Arial, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2.1rem;
+  margin: 0 0 9px 0;
+  color: #2139bd;
+  border-bottom: 3px solid #3057ff;
+  display: inline-block;
+  padding-bottom: 2px;
+  letter-spacing: .01em;
+}
+.galeria-cami {
+  display: flex;
+  flex-direction: row;
+  gap: 17px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.galeria-img-cami {
+  width: 152px;
+  height: 172px;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.14s, box-shadow 0.1s;
+  border: none;
+  box-shadow: 0 2px 20px rgba(60,60,100,0.12);
+}
+.galeria-img-cami:hover {
+  transform: scale(1.09);
+  box-shadow: 0 4px 32px rgba(10,90,220,0.15);
+  border: none;
+}
+
+/* --- Modal galería --- */
+.modal-galeria-cami {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(26,32,52,0.89);
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+.modal-galeria-cami img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 14px;
+  background: #fff;
+  display: block;
+  margin: 16px auto 4px auto;
+  box-shadow: 0 6px 38px rgba(10,20,80,0.14);
+}
+.modal-cerrar-cami {
+  position: absolute;
+  top: 22px; right: 42px;
+  color: #fff;
+  font-size: 2.8em;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  z-index: 3;
+  text-shadow: 0 2px 18px #111;
+}
+.modal-caption-cami {
+  color: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.06em;
+  margin: 0 auto;
+  text-align: center;
+  padding: 9px 20px;
+  max-width: 600px;
+  border-radius: 9px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1200px) {
+  .main-cami-content { gap: 12px; }
+  .main-camiseta-left { flex-basis: 310px; }
+  .main-camiseta-left img { width: 92vw; max-width: 270px; }
+  .galeria-img-cami { width: 95px; height: 120px; }
+}
+@media (max-width: 900px) {
+  .main-camiseta { padding-top: 15px; }
+  .main-cami-content { flex-direction: column; gap: 6px;}
+  .main-camiseta-left { align-items: center; margin: 0 auto;}
+  .main-camiseta-right { align-items: center; text-align: center;}
+  .desc-cami { max-width: 98vw; }
+  .galeria-cami { gap: 7px; justify-content: center; }
+  .main-camiseta-left img { width: 94vw; max-width: 200px; }
+  .titulo-cami { font-size: 1.5rem; padding-bottom: 3px; gap: 7px;}
+  .galeria-img-cami { width: 60px; height: 75px; }
+  .galeria-titulo { font-size: 1.1rem; }
+}
+@media (max-width: 600px) {
+  .main-camiseta { padding-top: 4px; }
+  .desc-cami { font-size: 1rem;}
+  .main-camiseta-left img { width: 98vw; max-width: 98vw;}
+  .galeria-img-cami { width: 34vw; height: 21vw; }
+  .galeria-titulo { font-size: .9rem; }
+  .titulo-cami { font-size: 1.04rem;}
+}

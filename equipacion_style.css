@@ -1,0 +1,206 @@
+@font-face {
+  font-family: 'Anantason SemiExpanded';
+  src: url('../fonts/Anantason-SemiExpanded-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  margin: 0;
+  padding: 0;
+  background: #181c23;
+  overflow: hidden; /* Elimina scroll vertical */
+}
+
+/* Barra de navegación completamente fija */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 100px;
+  background: linear-gradient(90deg, #111319 0%, #1a2238 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 10;
+}
+
+/* Contenedor general: ocupa TODA la pantalla menos la barra */
+.equipaciones-container {
+  position: fixed;
+  top: 100px; /* Altura navbar */
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #181c23;
+}
+
+/* Cada imagen ocupa el 50% */
+.equipacion-img {
+  position: relative;
+  flex: 1 1 0;
+  width: 50vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.equipacion-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: filter 0.4s cubic-bezier(.8,.2,.2,1);
+  pointer-events: none;
+  user-select: none;
+  display: block;
+}
+
+/* Overlay animado para efecto hover */
+.equipacion-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.83) 60%, rgba(10,10,10,0.48) 100%);
+  opacity: 0;
+  transition: opacity 0.38s cubic-bezier(.8,.2,.2,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.equipacion-img:hover .equipacion-overlay, .equipacion-img:focus-within .equipacion-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.equipacion-text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.equipacion-titulo {
+  font-family: 'Anantason SemiExpanded', 'Montserrat', Arial, sans-serif;
+  font-size: 4vw;              /* Mucho más grande y responsivo */
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: -10px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.38);
+  line-height: 1.1;
+  /* Centrado perfecto vertical */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 12vh;
+}
+
+.equipacion-divider {
+  width: 90%;
+  max-width: 330px;
+  border-top: 2px solid #fff;
+  margin: 0 auto 13px auto;
+  opacity: .88;
+}
+
+.equipacion-logos {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  justify-content: center;
+  margin-bottom: 14px;
+  min-height: 54px;
+}
+.equipacion-logo {
+  height: 75px;          /* O el tamaño que prefieras, será el alto de referencia */
+  max-width: 110px;      /* Limita lo horizontal, pero permite ancho variable */
+  width: auto;
+  object-fit: contain;   /* El logo nunca se recorta ni deforma */
+  object-position: center;
+  display: block;
+  margin: 0 0.5vw;
+  background: none;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 0;
+}
+.equipacion-logos span {
+  color: #fff;
+  font-size: 2.1rem;
+  min-width: 24px;
+  font-weight: 700;
+  margin: 0 4px;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.equipacion-extra-imgs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+.equipacion-extra {
+  height: 54px;
+  width: 68px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.15);
+  transition: transform 0.13s;
+  border: 1px solid rgba(40,40,40,0.07);
+}
+.equipacion-extra:hover {
+  transform: scale(1.08);
+}
+
+/* Responsivo: adapta para móvil mostrando las imágenes en vertical */
+/* Asegura buen centrado y tamaño reducido en móvil */
+@media (max-width: 900px) {
+  .equipacion-titulo { font-size: 2.2rem; min-height: 8vw; }
+  .equipacion-logos span { font-size: 1.4rem; min-width: 16px; }
+  .equipacion-divider { max-width: 170px; border-top-width: 1.5px; }
+}
+@media (max-width: 600px) {
+  .equipacion-titulo { font-size: 1.18rem; min-height: 0; }
+  .equipacion-logos span { font-size: 1.0rem; min-width: 9px; }
+  .equipacion-divider { max-width: 90px; }
+}
+
+@media (max-width: 900px) {
+  .equipacion-logo,
+  .equipacion-logos {
+    width: 34px;
+    height: 34px;
+    max-width: 34px;
+    max-height: 34px;
+    min-height: 0;
+  }
+  .equipacion-logos span { font-size: 1.25rem; }
+}
+@media (max-width: 600px) {
+  .equipacion-logo,
+  .equipacion-logos {
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    min-height: 0;
+  }
+  .equipacion-logos span { font-size: 1rem; }
+}
+
